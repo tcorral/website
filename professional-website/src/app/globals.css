@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+:root {
+  --background: #06070b;
+  --foreground: #f5f7ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-display);
+  --font-mono: var(--font-code);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-display), sans-serif;
+  text-rendering: geometricPrecision;
+}
+
+.nav-link {
+  @apply text-zinc-300 transition-colors duration-200 hover:text-white;
+}
+
+.section-card {
+  @apply rounded-2xl border border-zinc-700/70 bg-zinc-950/70 p-7 shadow-[0_18px_48px_rgba(4,8,20,0.38)] backdrop-blur md:p-8;
+}
+
+.section-kicker {
+  @apply text-xs uppercase tracking-[0.22em] text-zinc-400;
+}
+
+.section-title {
+  @apply mt-3 text-2xl leading-tight font-semibold text-zinc-100 md:text-3xl;
+}
+
+.section-copy {
+  @apply mt-4 text-sm leading-relaxed text-zinc-300 md:text-base;
+}
+
+.cta-primary {
+  @apply inline-flex items-center justify-center rounded-lg border border-cyan-300/40 bg-cyan-400/20 px-5 py-2.5 text-sm font-medium text-cyan-100 transition hover:border-cyan-200/80 hover:bg-cyan-300/30;
+}
+
+.cta-secondary {
+  @apply inline-flex items-center justify-center rounded-lg border border-zinc-600 bg-zinc-900/80 px-5 py-2.5 text-sm font-medium text-zinc-200 transition hover:border-zinc-400 hover:bg-zinc-800/80;
+}
+
+.stack-pill {
+  @apply rounded-full border border-zinc-600/90 bg-zinc-900/80 px-3 py-1 text-xs text-zinc-300;
+}
+
+.timeline-card {
+  @apply grid gap-4 rounded-2xl border border-zinc-700/70 bg-zinc-950/75 p-6 shadow-[0_15px_40px_rgba(5,10,25,0.35)] backdrop-blur md:grid-cols-[190px_1fr] md:gap-6;
+}
+
+.timeline-meta {
+  @apply border-b border-zinc-800 pb-4 md:border-b-0 md:border-r md:pb-0 md:pr-6;
+}
+
+.portfolio-card {
+  @apply rounded-2xl border border-zinc-700/75 bg-zinc-950/75 p-6 shadow-[0_14px_35px_rgba(5,9,20,0.35)] transition hover:-translate-y-1 hover:border-cyan-300/40;
+}
+
+.markdown-answer p {
+  margin: 0.45rem 0;
+}
+
+.markdown-answer ul,
+.markdown-answer ol {
+  margin: 0.55rem 0;
+  padding-left: 1.25rem;
+}
+
+.markdown-answer ul {
+  list-style: disc;
+}
+
+.markdown-answer ol {
+  list-style: decimal;
+}
+
+.markdown-answer li {
+  margin: 0.2rem 0;
+}
+
+.markdown-answer a {
+  color: #9be4ff;
+  text-decoration: underline;
+  text-decoration-color: rgba(120, 220, 255, 0.55);
+}
+
+.markdown-answer strong {
+  font-weight: 600;
+}
+
+.markdown-answer em {
+  font-style: italic;
+}
+
+.markdown-answer code {
+  border-radius: 0.35rem;
+  background: rgba(63, 72, 87, 0.55);
+  padding: 0.1rem 0.35rem;
+}
+
+.markdown-answer pre {
+  margin: 0.6rem 0;
+  overflow-x: auto;
+  border-radius: 0.6rem;
+  background: rgba(8, 12, 22, 0.95);
+  padding: 0.75rem;
+}
+
+.markdown-answer pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.markdown-answer blockquote {
+  margin: 0.6rem 0;
+  border-left: 2px solid rgba(161, 175, 196, 0.45);
+  padding-left: 0.7rem;
+  color: #c3cad9;
+  font-style: italic;
+}
+
+@keyframes float-glow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -16px, 0);
+  }
+}
+
+.animated-orb {
+  animation: float-glow 13s ease-in-out infinite;
+}
+
+.animation-delay {
+  animation-delay: -6s;
+}
